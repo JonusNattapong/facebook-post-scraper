@@ -771,12 +771,6 @@ facebook-post-scraper/
 ## 🚀 Roadmap
 
 - [ ] Fix engagement metrics extraction
-- [ ] Add filtering options in popup
-- [ ] Implement search functionality
-- [ ] Add batch export capabilities
-- [ ] Support for Facebook Stories
-- [ ] Comment thread extraction
-- [ ] Re-enable smart duplicate detection
 
 ## 📄 License
 
