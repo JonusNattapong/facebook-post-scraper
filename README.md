@@ -8,31 +8,120 @@ A Chrome extension for collecting Facebook posts with complete data extraction i
 
 ## 🎬 Visual Workflow
 
+```mermaid
+graph LR
+    A[📱 Browse Facebook Feed] -->|Right-Click| B[➕ Add Post Menu]
+    B -->|Click Add Post| C[⚡ Extract & Save]
+    C -->|Auto Extract| D[📝 Text + 🖼️ Images + 📊 Engagement]
+    D -->|Save to Storage| E[💾 Chrome Storage]
+    E -->|Click Extension Icon| F[🎨 Modern Popup UI]
+    F -->|Load Posts| G[📊 View Saved Posts]
+    G -->|Select Format| H{Choose Export Type}
+    H -->|JSON| I[📊 AI Training Format]
+    H -->|TXT| J[📝 Readable Format]
+    I -->|Download| K[📥 facebook-posts-dataset.json]
+    J -->|Download| L[📥 facebook-posts.txt]
+    
+    style A fill:#e3f2fd
+    style B fill:#fff3e0
+    style C fill:#f3e5f5
+    style D fill:#e8f5e9
+    style E fill:#fce4ec
+    style F fill:#e1f5fe
+    style G fill:#f1f8e9
+    style H fill:#fff9c4
+    style I fill:#e0f2f1
+    style J fill:#fce4ec
+    style K fill:#c8e6c9
+    style L fill:#ffccbc
 ```
-┌─────────────────────────────────────────────────────────────────────┐
-│                    FACEBOOK POST SCRAPER WORKFLOW                    │
-└─────────────────────────────────────────────────────────────────────┘
 
-   1️⃣ BROWSE FACEBOOK          2️⃣ ADD POST              3️⃣ VIEW DATA
-   
-   📱 Facebook Feed          ➕ Right-Click Menu        🎨 Modern Popup
-   ┌──────────────┐         ┌──────────────┐          ┌──────────────┐
-   │  📝 Post 1   │   →     │   Add Post   │    →     │ 📊 5 POSTS   │
-   │  📝 Post 2   │  click  │  ⚡Extract   │  saved   │              │
-   │  📝 Post 3   │         │   & Save     │          │  📂 Load     │
-   └──────────────┘         └──────────────┘          │  🔄 Refresh  │
-                                                       └──────────────┘
-                                                              ↓
-   
-   4️⃣ SELECT FORMAT           5️⃣ EXPORT DATA
-   
-   📊 Choose Type            📥 Download File
-   ┌──────────────┐         ┌──────────────────────┐
-   │ ○ JSON       │         │ facebook-posts-      │
-   │   (AI Train) │   →     │ dataset-2025-10-06   │
-   │ ○ TXT        │  export │ .json / .txt         │
-   │   (Readable) │         │                      │
-   └──────────────┘         └──────────────────────┘
+### 📝 Workflow Description
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Facebook
+    participant Extension
+    participant Storage
+    participant Popup
+    
+    User->>Facebook: Browse Posts
+    User->>Facebook: Right-Click on Post
+    Facebook->>Extension: Context Menu "Add Post"
+    User->>Extension: Click "Add Post"
+    
+    Extension->>Extension: Auto-inject content.js (if needed)
+    Extension->>Facebook: Extract Data (Text, Images, Videos)
+    Extension->>Facebook: Click "See More" (auto)
+    Extension->>Facebook: Get Engagement Metrics
+    
+    Extension->>Storage: Save Post Data
+    Storage-->>Extension: Confirm Saved
+    Extension->>User: ✅ Success Message
+    
+    User->>Popup: Click Extension Icon
+    Popup->>Storage: Load All Posts
+    Storage-->>Popup: Return Posts Array
+    Popup->>User: Display 📊 X POSTS
+    
+    User->>Popup: Select Format (JSON/TXT)
+    User->>Popup: Click "Export Data"
+    Popup->>Popup: Generate File
+    Popup->>User: � Download File
+```
+
+### 🔄 Complete User Journey
+
+```mermaid
+flowchart TD
+    Start([👤 User Opens Facebook]) --> Browse[📱 Browse Feed]
+    Browse --> Find[🔍 Find Interesting Post]
+    Find --> RightClick[�️ Right-Click on Post]
+    RightClick --> Menu{See Context Menu?}
+    
+    Menu -->|No| Reload[🔄 Reload Page]
+    Reload --> RightClick
+    Menu -->|Yes| ClickAdd[➕ Click 'Add Post']
+    
+    ClickAdd --> Extract[⚡ Auto Extract Data]
+    Extract --> Text[📝 Full Text + See More]
+    Extract --> Media[🖼️ Images & Videos]
+    Extract --> Engage[📊 Likes, Comments, Shares]
+    
+    Text --> Save[💾 Save to Chrome Storage]
+    Media --> Save
+    Engage --> Save
+    
+    Save --> Success{Success?}
+    Success -->|No| Error[❌ Show Error]
+    Success -->|Yes| Confirm[✅ Post Saved!]
+    
+    Confirm --> More{Add More Posts?}
+    More -->|Yes| Browse
+    More -->|No| OpenPopup[🎨 Open Extension Popup]
+    
+    OpenPopup --> LoadBtn[📂 Click 'Load Posts']
+    LoadBtn --> Display[📊 Display All Saved Posts]
+    Display --> Count[Show: X POSTS]
+    
+    Count --> ChooseFormat{Select Format}
+    ChooseFormat -->|JSON| SetJSON[📊 JSON - AI Training]
+    ChooseFormat -->|TXT| SetTXT[📝 TXT - Readable]
+    
+    SetJSON --> ExportBtn[📥 Click 'Export Data']
+    SetTXT --> ExportBtn
+    
+    ExportBtn --> Generate[⚙️ Generate File]
+    Generate --> Download[📥 Auto Download]
+    Download --> Complete([✅ Complete!])
+    
+    style Start fill:#e3f2fd
+    style Complete fill:#c8e6c9
+    style Error fill:#ffcdd2
+    style Confirm fill:#c8e6c9
+    style Save fill:#fff9c4
+    style Extract fill:#f3e5f5
 ```
 
 ### 📸 Screenshots from Usage
