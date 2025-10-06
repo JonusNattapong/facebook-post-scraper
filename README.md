@@ -39,7 +39,7 @@ A Chrome extension for collecting Facebook posts with complete data extraction i
 
 #### **ขั้นตอนที่ 1: คลิกขวาที่โพสต์บน Facebook**
 
-![Step 1 - Right Click Menu](image/S__33382426.jpg)
+![Step 1 - Right Click Menu](image/S__33382431.jpg)
 
 **คำอธิบาย:**
 - เปิด Facebook และเลื่อนหาโพสต์ที่ต้องการเก็บข้อมูล
@@ -51,7 +51,7 @@ A Chrome extension for collecting Facebook posts with complete data extraction i
 
 #### **ขั้นตอนที่ 2: เปิด Popup และดูโพสต์ที่บันทึก**
 
-![Step 2 - Popup Interface](image/S__33382427.jpg)
+![Step 2 - Popup Interface](image/S__33382426.jpg)
 
 **คำอธิบาย:**
 - คลิกที่ไอคอน **Extension** ในแถบเครื่องมือ Chrome
@@ -64,7 +64,7 @@ A Chrome extension for collecting Facebook posts with complete data extraction i
 
 #### **ขั้นตอนที่ 3: เลือก Format การ Export**
 
-![Step 3 - Export Format Selection](image/S__33382428.jpg)
+![Step 3 - Export Format Selection](image/S__33382430.jpg)
 
 **คำอธิบาย:**
 - หลังจากกด **"Load Posts"** จะเห็นรายการโพสต์ที่บันทึกไว้
@@ -90,7 +90,7 @@ A Chrome extension for collecting Facebook posts with complete data extraction i
 
 #### **ขั้นตอนที่ 5: ดูผลลัพธ์ JSON Output**
 
-![Step 5 - JSON Output](image/S__33382430.jpg)
+![Step 5 - JSON Output](image/S__33382428.jpg)
 
 **คำอธิบาย:**
 - ไฟล์ JSON ที่ได้จะมีโครงสร้างข้อมูลครบถ้วน:
@@ -104,7 +104,7 @@ A Chrome extension for collecting Facebook posts with complete data extraction i
 
 #### **ขั้นตอนที่ 6: ดูผลลัพธ์ TXT Output**
 
-![Step 6 - TXT Output](image/S__33382431.jpg)
+![Step 6 - TXT Output](image/S__33382427.jpg)
 
 **คำอธิบาย:**
 - ไฟล์ TXT จะแสดงข้อมูลในรูปแบบที่อ่านง่าย:
