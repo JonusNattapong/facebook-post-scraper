@@ -1,4 +1,4 @@
-# Facebook Post Scraper
+# Facebook Post Scraper by Guitar - Dead Simple Productivity
 
 A Chrome extension for collecting Facebook posts with complete data extraction including text, images, videos, and engagement metrics. Perfect for AI training datasets, social media analysis, and content research.
 
