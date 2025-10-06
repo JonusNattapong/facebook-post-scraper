@@ -2,6 +2,8 @@
 
 A Chrome extension for collecting Facebook posts with complete data extraction including text, images, videos, and engagement metrics. Perfect for AI training datasets, social media analysis, and content research.
 
+**Developed by zombitx64**
+
 ## ✨ Features
 
 - 🎯 **Single-Click Extraction** - Right-click "Add Post" to save any Facebook post
@@ -302,3 +304,5 @@ If you encounter any issues or have questions:
 ## Acknowledgments
 
 Built with ❤️ for automating Facebook data collection workflows.
+
+**Developer:** zombitx64
