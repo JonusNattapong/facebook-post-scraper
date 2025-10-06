@@ -4,39 +4,90 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DSP Post Collectorr</title>
+  <title>Facebook Post Scraper</title>
   <link rel="stylesheet" href="../css/popup.css">
 </head>
 <body>
-  <h3>
-    <img src="../../image/dsp_wink.png" alt="DSP" style="width: 2.25em; height: 2.25em; vertical-align: middle; margin-right: 4px;">
-    DSP Post Collectorr
-  </h3>
-  
-  <div id="status"></div>
-
-  <hr style="border: none; border-top: 1px solid #444; margin: 16px 0;">
-
-  <h3>💾 Saved Posts</h3>
-  <button id="loadSavedBtn">📂 Load Saved Posts</button>
-  <button id="refreshBtn" style="margin-left: 8px;">🔄 Refresh</button>
-  <div id="savedPostsContainer" style="display: none;">
-    <div style="margin-bottom: 8px; font-size: 12px; color: #b0b0b0;">Total posts: <span id="postCount">0</span></div>
-    <div style="margin-bottom: 8px;">
-      <label style="font-size: 12px; color: #e0e0e0;">Export format:</label>
-      <select id="exportFormat" style="margin-left: 8px; padding: 4px; background: #2a2a2a; color: #e0e0e0; border: 1px solid #444; border-radius: 4px;">
-        <option value="json">JSON (AI Training)</option>
-        <option value="txt">TXT (Human Readable)</option>
-      </select>
-      <div style="font-size: 11px; color: #888; margin-top: 2px;">
-        JSON: Complete data with images for AI models • TXT: Text-only summary
+  <!-- Header -->
+  <div class="header">
+    <div class="header-content">
+      <img src="../../image/dsp_wink.png" alt="DSP" class="logo">
+      <div class="header-text">
+        <h1>Post Collector</h1>
+        <p class="subtitle">Facebook Data Scraper</p>
       </div>
     </div>
-    <div id="savedPostsList" style="max-height: 300px; overflow-y: auto; margin-top: 8px;"></div>
-    <button id="exportBtn" style="margin-top: 8px; background: #4CAF50;">📥 Export Data</button>
-    <button id="downloadImagesBtn" style="margin-top: 8px; margin-left: 8px; background: #2196F3;">🖼️ Download Images</button>
-    <button id="clearBtn" style="margin-top: 8px; background: #f44336;">🗑️ Clear All</button>
+    <div class="stats-badge" id="statsContainer">
+      <span id="postCount">0</span>
+      <span class="stats-label">Posts</span>
+    </div>
   </div>
+
+  <!-- Status Messages -->
+  <div id="status"></div>
+
+  <!-- Main Content -->
+  <div class="content">
+    <!-- Quick Actions -->
+    <div class="section">
+      <h2 class="section-title">⚡ Quick Actions</h2>
+      <div class="button-grid">
+        <button id="loadSavedBtn" class="btn btn-primary">
+          <span class="btn-icon">📂</span>
+          <span class="btn-text">Load Posts</span>
+        </button>
+        <button id="refreshBtn" class="btn btn-secondary">
+          <span class="btn-icon">🔄</span>
+          <span class="btn-text">Refresh</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Saved Posts List -->
+    <div id="savedPostsContainer" class="section" style="display: none;">
+      <h2 class="section-title">💾 Saved Posts</h2>
+      
+      <!-- Export Options -->
+      <div class="export-options">
+        <div class="format-selector">
+          <label class="format-label">Export Format:</label>
+          <select id="exportFormat" class="format-select">
+            <option value="json">📊 JSON (AI Training)</option>
+            <option value="txt">📝 TXT (Readable)</option>
+          </select>
+        </div>
+        <p class="format-hint">JSON includes images & metadata • TXT is text-only</p>
+      </div>
+
+      <!-- Posts List -->
+      <div id="savedPostsList" class="posts-list"></div>
+
+      <!-- Action Buttons -->
+      <div class="action-buttons">
+        <button id="exportBtn" class="btn btn-success btn-large">
+          <span class="btn-icon">📥</span>
+          <span class="btn-text">Export Data</span>
+        </button>
+        <button id="downloadImagesBtn" class="btn btn-info btn-large">
+          <span class="btn-icon">🖼️</span>
+          <span class="btn-text">Download Images</span>
+        </button>
+        <button id="clearBtn" class="btn btn-danger btn-large">
+          <span class="btn-icon">🗑️</span>
+          <span class="btn-text">Clear All</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+    <!-- Footer -->
+  <div class="footer">
+    <p>Facebook Post Scraper v1.2.0</p>
+    <p>Developed by zombitx64</p>
+  </div>
+</body>
+</html>
   
   <script src="../js/popup.js"></script>
 </body>
