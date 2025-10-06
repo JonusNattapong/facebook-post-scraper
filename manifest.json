@@ -16,9 +16,9 @@
   "action": {
     "default_popup": "src/html/popup.html",
     "default_icon": {
-      "16": "icon16.png",
-      "48": "icon48.png",
-      "128": "icon128.png"
+      "16": "image/icon/icon16.png",
+      "48": "image/icon/icon48.png",
+      "128": "image/icon/icon128.png"
     }
   },
   "content_scripts": [
@@ -31,8 +31,8 @@
     "service_worker": "src/js/background.js"
   },
   "icons": {
-    "16": "icon16.png",
-    "48": "icon48.png",
-    "128": "icon128.png"
+    "16": "image/icon/icon16.png",
+    "48": "image/icon/icon48.png",
+    "128": "image/icon/icon128.png"
   }
 }
