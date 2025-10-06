@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "Facebook Post Scraper",
-  "version": "1.0",
-  "description": "Extract Facebook post data and save locally",
+  "version": "1.2.0",
+  "description": "Extract Facebook posts with complete data for AI training datasets",
   "permissions": [
     "activeTab",
     "scripting",

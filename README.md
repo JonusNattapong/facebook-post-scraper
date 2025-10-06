@@ -1,17 +1,20 @@
 # Facebook Post Scraper
 
-A Chrome extension that extracts Facebook post data and sends it to an n8n webhook for automation workflows.
+A Chrome extension for collecting Facebook posts with complete data extraction including text, images, videos, and engagement metrics. Perfect for AI training datasets, social media analysis, and content research.
 
-## Features
+## ✨ Features
 
-- 📤 **Right-click context menu** - Extract post data with a simple right-click
-- ✏️ **Text selection mode** - Highlight caption text for 100% accurate extraction
-- 🔄 **Auto-expand captions** - Automatically clicks "See more" to get full text
-- 📊 **Complete data extraction** - Captures author, caption, images, videos, and engagement stats
-- 🌐 **Multi-language support** - Works with English and Thai Facebook interfaces
-- ⚡ **n8n integration** - Sends data directly to your n8n webhook
+- 🎯 **Single-Click Extraction** - Right-click "Add Post" to save any Facebook post
+- � **Complete Text Capture** - Automatically expands "See More" to get full captions (supports multi-paragraph posts)
+- �️ **Media Collection** - Extracts all images and videos with URLs
+- 📊 **Engagement Metrics** - Captures likes, comments, and shares (with debugging support)
+- 💾 **Local Storage** - Saves up to 500 posts locally in Chrome storage
+- 📥 **Export Capabilities** - Export to JSON or TXT format with metadata
+- 🌐 **Multi-language** - Supports English and Thai Facebook interfaces
+- 🔄 **No Duplicates** - Currently disabled - adds ALL posts without duplicate checking
+- 🎨 **UTF-8 Support** - Proper Thai language encoding
 
-## Installation
+## 🚀 Installation
 
 ### From Source
 
@@ -19,77 +22,181 @@ A Chrome extension that extracts Facebook post data and sends it to an n8n webho
 2. Open Chrome and go to `chrome://extensions`
 3. Enable "Developer mode" (toggle in top right)
 4. Click "Load unpacked"
-5. Select the `dsp-scraper` folder
-6. The extension is now installed!
+5. Select the extension folder
+6. The extension is now ready to use!
 
-## Configuration
+## 📖 Usage
 
-### Set Up Your Webhook URL
+### Adding Posts
+
+1. Navigate to any Facebook page or feed
+2. **Right-click on a post** (anywhere on the post)
+3. Click **"➕ Add Post"** from the context menu
+4. Post data is automatically extracted and saved!
+
+**Note:** Extension will auto-inject if needed - just reload the page if you encounter any issues.
+
+### Viewing & Exporting Data
 
 1. Click the extension icon in Chrome toolbar
-2. Enter your n8n webhook URL in the input field
-3. Click "💾 Save Webhook URL"
+2. View all saved posts with preview
+3. Click **"📥 Export as JSON"** to download dataset
+4. Or **"📄 Export as TXT"** for text-only format
 
-**Important:** Make sure your n8n webhook is configured to accept POST requests.
+### Data Structure
 
-## Usage
+Each post includes:
+- `id` - Unique post identifier
+- `text` - Complete caption/post text
+- `author` - Author name and profile URL
+- `url` - Link to the post
+- `timestamp` - When the post was extracted
+- `images[]` - Array of image URLs with dimensions
+- `videos[]` - Array of video URLs
+- `post_type` - Type classification (text, image, video, etc.)
+- `engagement` - Likes, comments, shares counts
+- `image_count`, `video_count` - Media counts
 
-### Method 1: Text Selection (Recommended for 100% Accuracy)
+## 📋 Data Format
 
-1. Go to any Facebook post
-2. **Highlight/select the caption text** you want to extract
-3. Right-click on the selected text
-4. Click "📤 Send to n8n"
-5. Data is sent to your webhook!
-
-### Method 2: Auto-Detection
-
-1. **Click into the full post** (not from feed view)
-2. Right-click anywhere on the post
-3. Click "📤 Send to n8n"
-4. Extension will auto-detect and extract the data
-
-### Important Notes
-
-- ✅ **Works best in full post view** - Click on a post to open it fully before extracting
-- ✅ **Text selection is most accurate** - Highlight the caption for guaranteed accuracy
-- ❌ **Photo viewer not supported** - Close the photo lightbox and click "See post" first
-
-## Data Extracted
-
-The extension captures the following data:
+### JSON Export Example
 
 ```json
 {
-  "url": "Post URL",
-  "timestamp": "ISO timestamp",
-  "author": "Author name",
-  "authorProfileUrl": "Author profile URL",
-  "caption": "Post caption/text",
-  "images": [
+  "dataset_info": {
+    "name": "Facebook Posts Dataset",
+    "description": "Facebook posts dataset with text, images, and videos for AI training",
+    "version": "1.0.0",
+    "created_at": "2025-10-06T13:08:27.700Z",
+    "total_posts": 9,
+    "source": "Facebook Post Scraper Extension"
+  },
+  "posts": [
     {
-      "url": "Image URL",
-      "alt": "Alt text",
-      "width": 1200,
-      "height": 800
+      "id": "post_1",
+      "text": "Complete post caption...",
+      "author": "Author Name",
+      "author_profile_url": "https://www.facebook.com/username",
+      "url": "https://www.facebook.com/...",
+      "timestamp": "2025-10-06T13:03:07.073Z",
+      "images": [
+        {
+          "url": "https://...",
+          "alt": null,
+          "width": 590,
+          "height": 331
+        }
+      ],
+      "videos": [],
+      "post_type": "image",
+      "engagement": {
+        "likes": 0,
+        "comments": 0,
+        "shares": 0
+      },
+      "extracted_at": "2025-10-06T13:08:27.700Z",
+      "image_count": 1,
+      "video_count": 0
     }
-  ],
-  "videos": [
-    {
-      "url": "Video URL",
-      "poster": "Poster image URL"
-    }
-  ],
-  "likes": "1500",
-  "comments": "42",
-  "shares": "286",
-  "postType": "image|video|text"
+  ]
 }
 ```
 
-## Troubleshooting
+## 🔧 Troubleshooting
 
-### "Could not find post" Error
+### Extension Not Working
+1. **Reload the extension**: Go to `chrome://extensions` → Click reload (🔄)
+2. **Reload Facebook tab**: Press `Ctrl+R` or `F5` on the Facebook page
+3. **Check Console**: Press `F12` to see error messages
+
+### "Could not establish connection" Error
+- The extension auto-injects content script if needed
+- If error persists, try:
+  1. Close and reopen Facebook tab
+  2. Remove and reinstall extension
+  3. Clear browser cache
+
+### Engagement Showing 0
+- **Current Known Issue**: Engagement extraction needs debugging
+- Enable Console (F12) and look for:
+  ```
+  🔍 Found X aria-labels in post
+  ✅ Likes: XX (from aria-label: "...")
+  ```
+- Please report the aria-label formats you see
+
+### Caption Not Complete
+- Make sure to scroll to the post before right-clicking
+- Extension auto-clicks "See More" up to 3 times
+- For very long posts, try scrolling down first
+
+## 🛠️ Development
+
+### Project Structure
+
+```
+DSP Post Collector/
+├── manifest.json          # Extension configuration
+├── src/
+│   ├── js/
+│   │   ├── background.js  # Background service worker
+│   │   ├── content.js     # Main extraction logic
+│   │   └── popup.js       # Popup UI logic
+│   └── html/
+│       └── popup.html     # Popup interface
+├── image/icon/           # Extension icons
+└── README.md
+```
+
+### Key Technologies
+- **Manifest V3** - Latest Chrome extension format
+- **Content Scripts** - Injected into Facebook pages
+- **Chrome Storage API** - Local data persistence
+- **Async/Await** - Modern JavaScript patterns
+
+## 📝 Known Issues
+
+1. **Engagement Metrics** - Currently showing 0 (debugging in progress)
+   - Need to identify correct Facebook DOM structure
+   - Debug logging added to help identify patterns
+
+2. **Duplicate Detection** - Currently disabled
+   - All posts can be added without restriction
+   - May result in duplicate entries if same post added multiple times
+
+## 🚀 Roadmap
+
+- [ ] Fix engagement metrics extraction
+- [ ] Add filtering options in popup
+- [ ] Implement search functionality
+- [ ] Add batch export capabilities
+- [ ] Support for Facebook Stories
+- [ ] Comment thread extraction
+- [ ] Re-enable smart duplicate detection
+
+## 📄 License
+
+This project is open source and available under the MIT License.
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit issues or pull requests.
+
+## ⚠️ Disclaimer
+
+This tool is for personal use and research purposes only. Please respect Facebook's Terms of Service and privacy policies. Do not use this tool to scrape private content or violate anyone's privacy.
+
+## 📧 Support
+
+If you encounter any issues or have questions:
+1. Check the Console (F12) for error messages
+2. Open an issue on GitHub
+3. Include Console logs and screenshots if possible
+
+---
+
+**Version**: 1.0.0  
+**Last Updated**: October 6, 2025
 
 **Solution:**
 - Make sure you've clicked into the full post (not viewing from feed)
