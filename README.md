@@ -37,31 +37,87 @@ A Chrome extension for collecting Facebook posts with complete data extraction i
 
 ### 📸 Screenshots from Usage
 
-1) Right-Click Menu — คลิกขวาที่โพสต์แล้วเลือก "Add Post":
+#### **ขั้นตอนที่ 1: คลิกขวาที่โพสต์บน Facebook**
 
-![Right-Click Menu](image/S__33382426.jpg)
+![Step 1 - Right Click Menu](image/S__33382426.jpg)
 
-2) Popup Interface — หน้าต่าง Extension แสดงจำนวนโพสต์ที่บันทึกไว้ (badge):
+**คำอธิบาย:**
+- เปิด Facebook และเลื่อนหาโพสต์ที่ต้องการเก็บข้อมูล
+- **คลิกขวา** ที่โพสต์ (คลิกที่ไหนก็ได้บนโพสต์)
+- จะเห็นเมนู context menu พร้อมตัวเลือก **"➕ Add Post"**
+- Extension จะทำงานอัตโนมัติทันทีที่คลิก
 
-![Popup Interface](image/S__33382427.jpg)
+---
 
-3) Saved Posts List — ดูรายการโพสต์ที่บันทึก (การ์ดตัวอย่างแต่ละโพสต์):
+#### **ขั้นตอนที่ 2: เปิด Popup และดูโพสต์ที่บันทึก**
 
-![Saved Posts List](image/S__33382428.jpg)
+![Step 2 - Popup Interface](image/S__33382427.jpg)
 
-4) Format Selection — เลือกรูปแบบการ Export เป็น JSON หรือ TXT:
+**คำอธิบาย:**
+- คลิกที่ไอคอน **Extension** ในแถบเครื่องมือ Chrome
+- จะเห็นหน้าต่าง Popup ที่สวยงามพร้อม:
+  - 📊 **Badge แสดงจำนวนโพสต์** (เช่น "5 POSTS")
+  - ⚡ **Quick Actions**: ปุ่ม Load Posts และ Refresh
+  - 🎨 **การออกแบบสไตล์ทันสมัย** พร้อม gradient สีม่วง
 
-![Format Selection](image/S__33382429.jpg)
+---
 
-5) Export Action — กดปุ่ม "Export Data" เพื่อดาวน์โหลดไฟล์:
+#### **ขั้นตอนที่ 3: เลือก Format การ Export**
 
-![Export Action](image/S__33382430.jpg)
+![Step 3 - Export Format Selection](image/S__33382428.jpg)
 
-6) Example Outputs — ตัวอย่างไฟล์ JSON และ TXT ที่ได้หลังจาก Export:
+**คำอธิบาย:**
+- หลังจากกด **"Load Posts"** จะเห็นรายการโพสต์ที่บันทึกไว้
+- เลือก **Export Format** จาก dropdown:
+  - 📊 **JSON (AI Training)** - ข้อมูลครบถ้วนพร้อม metadata และรูปภาพ
+  - 📝 **TXT (Readable)** - เฉพาะข้อความ อ่านง่าย
+- ด้านล่างจะมีคำแนะนำว่าแต่ละ format เหมาะสำหรับอะไร
 
-![Output JSON and TXT](image/S__33382431.jpg)
+---
 
-> Caption: ภาพชุดนี้แสดงขั้นตอนตั้งแต่การคลิกขวาเลือก "Add Post" → เปิด popup → เลือกรูปแบบ → กด Export → ได้ไฟล์ JSON/TXT
+#### **ขั้นตอนที่ 4: Export ข้อมูลและดาวน์โหลด**
+
+![Step 4 - Export Buttons](image/S__33382429.jpg)
+
+**คำอธิบาย:**
+- กด **"📥 Export Data"** (ปุ่มสีเขียว) เพื่อดาวน์โหลดไฟล์
+- ตัวเลือกเพิ่มเติม:
+  - **🖼️ Download Images** - ดาวน์โหลดรูปภาพแยกต่างหาก
+  - **🗑️ Clear All** - ลบโพสต์ทั้งหมด (ระวัง!)
+- ไฟล์จะดาวน์โหลดอัตโนมัติพร้อมชื่อไฟล์ที่มีวันที่
+
+---
+
+#### **ขั้นตอนที่ 5: ดูผลลัพธ์ JSON Output**
+
+![Step 5 - JSON Output](image/S__33382430.jpg)
+
+**คำอธิบาย:**
+- ไฟล์ JSON ที่ได้จะมีโครงสร้างข้อมูลครบถ้วน:
+  - ✅ `dataset_info` - ข้อมูล metadata ของ dataset
+  - ✅ `posts` - Array ของโพสต์ทั้งหมด
+  - ✅ แต่ละโพสต์มี: text, author, images, videos, engagement
+  - ✅ รองรับ **UTF-8 encoding** สำหรับภาษาไทย
+- เหมาะสำหรับ **AI/ML training** และ **data analysis**
+
+---
+
+#### **ขั้นตอนที่ 6: ดูผลลัพธ์ TXT Output**
+
+![Step 6 - TXT Output](image/S__33382431.jpg)
+
+**คำอธิบาย:**
+- ไฟล์ TXT จะแสดงข้อมูลในรูปแบบที่อ่านง่าย:
+  - 📝 Header พร้อมจำนวนโพสต์ทั้งหมด
+  - 👤 Author name และ URL
+  - 📅 วันที่และเวลา
+  - 💬 Caption เต็มรูปแบบ
+  - `=====` เส้นแบ่งระหว่างโพสต์
+- เหมาะสำหรับ **การตรวจสอบ** และ **อ่านเนื้อหา**
+
+---
+
+### 🎯 ตัวอย่างการใช้งานจริง
 
 ## ✨ Features
 
