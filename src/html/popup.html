@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../css/popup.css">
+</head>
+<body>
+  <h3><img src="../../dsp_wink.png" alt="DSP" style="width: 2.25em; height: 2.25em; vertical-align: middle; margin-right: 4px;"> DSP Post Collectorr</h3>
+  
+  <div id="status"></div>
+
+  <hr style="border: none; border-top: 1px solid #444; margin: 16px 0;">
+
+  <h3>💾 Saved Posts</h3>
+  <button id="loadSavedBtn">📂 Load Saved Posts</button>
+  <button id="refreshBtn" style="margin-left: 8px;">🔄 Refresh</button>
+  <div id="savedPostsContainer" style="display: none;">
+    <div style="margin-bottom: 8px; font-size: 12px; color: #b0b0b0;">Total posts: <span id="postCount">0</span></div>
+    <div style="margin-bottom: 8px;">
+      <label style="font-size: 12px; color: #e0e0e0;">Export format:</label>
+      <select id="exportFormat" style="margin-left: 8px; padding: 4px; background: #2a2a2a; color: #e0e0e0; border: 1px solid #444; border-radius: 4px;">
+        <option value="json">JSON (AI Training)</option>
+        <option value="txt">TXT (Human Readable)</option>
+      </select>
+      <div style="font-size: 11px; color: #888; margin-top: 2px;">
+        JSON: Complete data with images for AI models • TXT: Text-only summary
+      </div>
+    </div>
+    <div id="savedPostsList" style="max-height: 300px; overflow-y: auto; margin-top: 8px;"></div>
+    <button id="exportBtn" style="margin-top: 8px; background: #4CAF50;">📥 Export Data</button>
+    <button id="downloadImagesBtn" style="margin-top: 8px; margin-left: 8px; background: #2196F3;">🖼️ Download Images</button>
+    <button id="clearBtn" style="margin-top: 8px; background: #f44336;">🗑️ Clear All</button>
+  </div>
+  
+  <script src="../js/popup.js"></script>
+</body>
+</html>

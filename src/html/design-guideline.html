@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Design Guideline - Facebook Post Scraper</title>
+  <link rel="stylesheet" href="../css/design-guideline.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🎨 Design Guideline</h1>
+    <p>Facebook Post Scraper Extension</p>
+
+    <div class="instructions">
+      <strong>📝 Instructions:</strong>
+      <p>Edit the sections below marked with "✏️ EDITABLE" to specify your design preferences.
+      Change colors, fonts, button styles, etc. Then share your changes with me and I'll update the extension!</p>
+    </div>
+
+    <!-- COLOR PALETTE -->
+    <div class="section">
+      <h2>🎨 Color Palette</h2>
+
+      <div class="editable">
+        <div class="editable-label">✏️ EDITABLE - Change the colors below</div>
+        <p>Modify the background colors below to your preferred colors:</p>
+      </div>
+
+      <div class="color-grid">
+        <div class="color-box">
+          <div class="color-swatch" style="background: #a094e1;"></div>
+          <div class="color-info">
+            <div class="color-name">Primary Purple</div>
+            <div class="color-code">#a094e1</div>
+            <div class="color-code" style="font-size: 12px;">Used for: Main buttons, accent color</div>
+          </div>
+        </div>
+
+        <div class="color-box">
+          <div class="color-swatch" style="background: #42b72a;"></div>
+          <div class="color-info">
+            <div class="color-name">Success Green</div>
+            <div class="color-code">#42b72a</div>
+            <div class="color-code" style="font-size: 12px;">Used for: Success messages, save button</div>
+          </div>
+        </div>
+
+        <div class="color-box">
+          <div class="color-swatch" style="background: #e4434d;"></div>
+          <div class="color-info">
+            <div class="color-name">Error Red</div>
+            <div class="color-code">#e4434d</div>
+            <div class="color-code" style="font-size: 12px;">Used for: Error messages</div>
+          </div>
+        </div>
+
+        <div class="color-box">
+          <div class="color-swatch" style="background: #202020;"></div>
+          <div class="color-info">
+            <div class="color-name">Background Dark</div>
+            <div class="color-code">#202020</div>
+            <div class="color-code" style="font-size: 12px;">Used for: Main background</div>
+          </div>
+        </div>
+
+        <div class="color-box">
+          <div class="color-swatch" style="background: #2a2a2a;"></div>
+          <div class="color-info">
+            <div class="color-name">Container Dark</div>
+            <div class="color-code">#2a2a2a</div>
+            <div class="color-code" style="font-size: 12px;">Used for: Cards, containers</div>
+          </div>
+        </div>
+
+        <div class="color-box">
+          <div class="color-swatch" style="background: #e0e0e0;"></div>
+          <div class="color-info">
+            <div class="color-name">Text Light</div>
+            <div class="color-code">#e0e0e0</div>
+            <div class="color-code" style="font-size: 12px;">Used for: Primary text</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TYPOGRAPHY -->
+    <div class="section">
+      <h2>✍️ Typography</h2>
+
+      <div class="editable">
+        <div class="editable-label">✏️ EDITABLE - Change the font family</div>
+        <p>Current font: <code>'Poppins', sans-serif</code></p>
+        <p>Replace with your preferred font family (e.g., "Inter", "Poppins", "Montserrat", etc.)</p>
+      </div>
+
+      <div class="font-example">
+        <strong>Heading (H3)</strong>
+        <div class="font-preview" style="font-size: 16px; font-weight: 600; color: #a094e1;">
+          📱 Facebook Post Scraper
+        </div>
+      </div>
+
+      <div class="font-example">
+        <strong>Body Text</strong>
+        <div class="font-preview" style="font-size: 14px; color: #e0e0e0;">
+          Extract Facebook post data and send to n8n webhook
+        </div>
+      </div>
+
+      <div class="font-example">
+        <strong>Small Text / Hints</strong>
+        <div class="font-preview" style="font-size: 12px; color: #b0b0b0;">
+          Your n8n webhook endpoint
+        </div>
+      </div>
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="section">
+      <h2>🔘 Buttons</h2>
+
+      <div class="editable">
+        <div class="editable-label">✏️ EDITABLE - Modify button styles</div>
+        <p>Change padding, border-radius, font-size, colors, etc.</p>
+      </div>
+
+      <div class="button-grid">
+        <div class="button-example">
+          <button class="btn btn-primary">Primary Button</button>
+          <p style="margin-top: 10px; font-size: 13px; color: #b0b0b0;">
+            Padding: 12px 24px<br>
+            Border-radius: 8px<br>
+            Font-size: 15px
+          </p>
+        </div>
+
+        <div class="button-example">
+          <button class="btn btn-success">Success Button</button>
+          <p style="margin-top: 10px; font-size: 13px; color: #b0b0b0;">
+            Save webhook URL
+          </p>
+        </div>
+
+        <div class="button-example">
+          <button class="btn btn-danger">Danger Button</button>
+          <p style="margin-top: 10px; font-size: 13px; color: #b0b0b0;">
+            Delete/Cancel actions
+          </p>
+        </div>
+
+        <div class="button-example">
+          <button class="btn btn-secondary">Secondary Button</button>
+          <p style="margin-top: 10px; font-size: 13px; color: #b0b0b0;">
+            Less important actions
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- INPUTS -->
+    <div class="section">
+      <h2>📝 Input Fields</h2>
+
+      <div class="editable">
+        <div class="editable-label">✏️ EDITABLE - Modify input styles</div>
+        <p>Change border, padding, border-radius, focus color, etc.</p>
+      </div>
+
+      <div class="input-example">
+        <label style="display: block; margin-bottom: 8px; font-weight: 500;">Webhook URL:</label>
+        <input type="text" class="input-field" placeholder="https://your-n8n.com/webhook/...">
+        <p style="margin-top: 8px; font-size: 12px; color: #b0b0b0;">
+          Padding: 12px | Border: 1px solid #444 | Border-radius: 6px
+        </p>
+      </div>
+    </div>
+
+    <!-- NOTIFICATIONS -->
+    <div class="section">
+      <h2>🔔 Notifications</h2>
+
+      <div class="editable">
+        <div class="editable-label">✏️ EDITABLE - Modify notification styles</div>
+        <p>Change colors, padding, border-radius, font-size, etc.</p>
+      </div>
+
+      <div class="notification-examples">
+        <div class="notification notification-success">
+          ✅ Data sent to n8n successfully!
+        </div>
+
+        <div class="notification notification-error">
+          ❌ Failed to send to n8n
+        </div>
+
+        <div class="notification notification-info">
+          ℹ️ Processing your request...
+        </div>
+
+        <div class="notification notification-warning">
+          ⚠️ Please set webhook URL first!
+        </div>
+      </div>
+
+      <p style="font-size: 13px; color: #b0b0b0; margin-top: 15px;">
+        Current: Padding: 16px 24px | Border-radius: 8px | Font-size: 15px
+      </p>
+    </div>
+
+    <!-- SPACING & LAYOUT -->
+    <div class="section">
+      <h2>📏 Spacing & Layout</h2>
+
+      <div class="editable">
+        <div class="editable-label">✏️ EDITABLE - Modify spacing values</div>
+
+        <div style="margin-top: 15px;">
+          <strong>Popup Width:</strong> <code>350px</code><br>
+          <small>Change this to make the popup wider or narrower</small>
+        </div>
+
+        <div style="margin-top: 15px;">
+          <strong>Popup Padding:</strong> <code>16px</code><br>
+          <small>Space inside the popup</small>
+        </div>
+
+        <div style="margin-top: 15px;">
+          <strong>Element Spacing:</strong> <code>12px</code><br>
+          <small>Space between form elements</small>
+        </div>
+
+        <div style="margin-top: 15px;">
+          <strong>Border Radius:</strong> <code>6px - 8px</code><br>
+          <small>Roundness of corners</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- ICONS & EMOJIS -->
+    <div class="section">
+      <h2>🎭 Icons & Emojis</h2>
+
+      <div class="editable">
+        <div class="editable-label">✏️ EDITABLE - Change emojis or remove them</div>
+        <p>Specify which emojis you want to use (or set to "none" to remove)</p>
+
+        <div style="margin-top: 15px; line-height: 2;">
+          <strong>Extension Icon:</strong> 📱 <small>(shown in popup title)</small><br>
+          <strong>Save Button:</strong> 💾<br>
+          <strong>Extract Button:</strong> 🚀<br>
+          <strong>Success:</strong> ✅<br>
+          <strong>Error:</strong> ❌<br>
+          <strong>Warning:</strong> ⚠️<br>
+          <strong>Context Menu:</strong> 📤<br>
+        </div>
+      </div>
+    </div>
+
+    <!-- NOTES SECTION -->
+    <div class="section">
+      <h2>📋 Additional Notes</h2>
+
+      <div class="editable">
+        <div class="editable-label">✏️ EDITABLE - Add any additional design notes</div>
+        <p>Add any other design preferences, inspirations, or requirements here:</p>
+        <textarea style="width: 100%; min-height: 150px; padding: 12px; border: 1px solid #444; border-radius: 6px; font-family: inherit; font-size: 14px; background: #2a2a2a; color: #e0e0e0;" placeholder="Example:
+- Make it look more modern
+- Use shadows for depth
+- Inspired by Material Design
+- etc."></textarea>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
