@@ -85,8 +85,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Photo modal detection with user guidance
 - Multi-language support (English and Thai Facebook interfaces)
 - Complete engagement stats extraction (likes, comments, shares)
-- Clean, simple popup UI for webhook configuration
-- n8n webhook integration for automation workflows
+- Clean, simple popup UI for managing saved posts
+- Local storage with export capabilities
 
 ### Technical Features
 
@@ -110,5 +110,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Version History
 
+- **1.2.0** - Unlimited collection, auto-injection, enhanced text extraction (2025-10-06)
 - **1.1.0** - Video support, code reorganization, and enhanced export features (2025-10-06)
 - **1.0.0** - Initial stable release with core Facebook post extraction functionality

@@ -289,4 +289,4 @@ MIT License - Free to use, modify, and distribute
 ### [v1.0.0] - December 2024
 - Initial release
 - Basic post extraction
-- n8n webhook integration
+- Local storage and export functionality
